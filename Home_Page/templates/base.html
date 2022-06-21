@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="witdh=device-width,
+     initial-scale = 1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav{
+            background: black;
+            height: 80px;
+            width: 100%;
+
+        }
+        label.logo{
+            color: white;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 50px;
+            font-weight: bold;
+            float: left;
+
+        }
+        nav ul{
+            float:right;
+            margin-right:20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+
+        }
+
+        nav ul li a{
+            color: white;
+            font-size:17px;
+            padding; 7px 13px;
+            border-radius: 3px;
+        }
+
+
+        a.active, a:hover{
+            background: #cc1010;
+            transition: .5s;
+        }
+        nav ul a{
+            float:left;
+            margin-left: 30px;
+
+        }
+
+        nav ul li a img{
+            size:10px;
+        }
+
+        .social_link {
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <label class="logo">Juho Korhonen</label>
+
+        <a class="social_link" href="https://www.instagram.com/juho.korhonen/" target="_blank" rel="noopener noreferrer">
+            <img height="80px" width="80px" src="{% static 'images/instagram_logo.jfif' %}"></a>
+
+
+        <a class="social_link" href="https://www.reddit.com/user/Weird-Stuff-6172" target="_blank" rel="noopener noreferrer">
+            <img height="80px" width="80px" src="{% static 'images/reddit_logo.png' %}"></a>
+
+
+        <ul>
+            <li><a href="/about-me">About me</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
